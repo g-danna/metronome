@@ -1,0 +1,427 @@
+/* Animation */
+
+@keyframes startle {
+    25%  {transform: rotate(-8deg);}
+    50%  {transform: rotate(8deg);}
+    75%  {transform: rotate(-8deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/* Tags */
+
+html, body {
+    background-color: #fff;
+    font-size: 20px;
+    font-family: "Source Sans Pro", "Corbel", "Gill Sans", sans-serif;
+    color: #585858;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0%;
+    outline-width: 0px;
+}
+
+a, a:visited {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2, figcaption, p {
+    line-height: 140%;
+}
+
+h1 {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: #fff;
+    margin: 0 0 38px;
+}
+
+h2, figcaption {
+    font-size: 22px;
+    margin: 27px 0;
+}
+
+table {
+    width: 100%;
+}
+
+ul {
+    list-style-image: url("../assets/check-mark.svg");
+    margin: 24px 0;
+}
+
+li {
+    padding-left: 0.6ch
+}
+
+th > img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: auto;
+}
+
+/* Metronome */
+
+#controller {
+    background: #fff;
+    height: 400px;
+    width: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px #939393;
+}
+
+#display {
+    font-size: 40px;
+    color: #777;
+    text-align: center;
+    height: 15%;
+    width: 40%;
+    top: 42.5%;
+    left: 30%;
+    position: absolute;
+    -webkit-display: box;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#tempo {
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: right;
+    width: 3ch;
+    outline: none;
+    padding: 0;
+    border: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: text;
+    border-radius: 0%;
+}
+
+/* Metronome controls */
+
+.controls {
+    position: absolute;
+    /* The control buttons are flex containers to keep the svg images centered as they shrink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls svg {
+    height: 100%;
+    width: 100%;
+    transition: width 0.05s, height 0.05s;
+}
+
+.controls:active svg {
+    height: 95%;
+    width: 95%;
+}
+
+#minus-button {
+    height: 15%;
+    width: 15%;
+    top: 42.5%;
+    left: 10%;
+}
+
+#plus-button {
+    height: 15%;
+    width: 15%;
+    top: 42.5%;
+    right: 10%;
+}
+
+#play-button {
+    height: 13%;
+    width: 13%;
+    bottom: 18.5%;
+    left: 43.5%;
+}
+
+.fill {
+    fill: #777;
+    transition: fill 0.15s;
+}
+
+/* Links */
+
+.external-link, .external-link:visited {
+    /* Workaround to have underline of different color */
+    box-shadow: inset 0 -2.1px 0 0 #ee770f;
+}
+
+/* Page elements */
+
+.page {
+    width: 90%;
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: -1;
+}
+
+.upper {
+    padding-top: 60px;
+}
+
+.lower {
+    padding-bottom: 90px;
+}
+
+.h1-background {
+    background: -webkit-linear-gradient(45deg, #ee770f, #eebb0f);
+    background: linear-gradient(45deg, #ee770f, #eebb0f);
+}
+
+.frame {
+    /* Creates a 4:3 frame (width : padding-bottom = frame width : frame height) */
+    width: 100%;
+    padding-bottom: 75%;
+    position: relative;
+}
+
+.frame > img {
+    /* Content aspect fits inside the frame */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/* Bottom bar */
+
+.navbar {
+    background-color: #fff;
+    font-size: 24px;
+    height: 55px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    box-shadow: 0px 0px 15px #939393;
+    z-index: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#about-button {
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    -webkit-display: box;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: auto;
+    padding: 0 15px;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+
+#share-buttons {
+    height: 100%;
+    width: 70px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    -webkit-display: box;
+    -webkit-display: flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 15px;
+}
+
+#share-buttons img {
+    width: 31px;
+    height: 31px;
+    display: block;
+}
+
+#share-buttons img:hover {
+    animation: startle 0.2s;
+}
+
+/* Curtain system */
+
+#curtain-container {
+    height: 100%;
+    height: calc(100% - 55px);
+    width: 100%;
+    position: fixed;
+    pointer-events: none;
+}
+
+#curtain {
+    background-color: #ebf0f4;
+    height: 100%;
+    width: 100%;
+    min-height: 265px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    transition: transform 0.5s;
+    margin: auto;
+    pointer-events: all;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.curtain-up {
+    -webkit-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+}
+
+.curtain-down {
+    -webkit-transform: none;
+    transform: none;
+}
+
+/* Error message dialog */
+
+#error-message {
+    display: none;
+}
+
+/* Hover */
+
+@media (hover: hover) {
+    
+    .controls:hover .fill {
+        fill: #ee770f;
+    }
+    
+    #about-button:hover {
+        color: #fff;
+        background-color: #ee770f;
+    }
+}
+
+/* Responsive */
+
+@media screen and (max-height: 500px), screen and (max-width: 500px) {
+    
+    #display {
+        font-size: 32.5px;
+        font-size: 8vmin;
+    }
+    
+    #controller {
+        height: 324px;
+        width: 324px;
+        height: 80vmin;
+        width: 80vmin;
+    }
+}
+
+@media screen and (max-height: 310px), screen and (max-width: 310px) {
+    
+    #display {
+        font-size: 25px;
+    }
+    
+    #controller {
+        height: 248px;
+        width: 248px;
+    }
+}
+
+@media screen and (max-height: 370px) {
+    
+    .lower {
+        padding-bottom: 75px;
+    }
+    
+    .navbar {
+        font-size: 20px;
+        height: 40px;
+    }
+    
+    #share-buttons img {
+        height: 27px;
+        width: 27px;
+    }
+    
+    #curtain-container {
+        height: calc(100% - 40px);
+    }
+    
+    #share-buttons {
+        width: 57px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    
+    h1 {
+        font-size: 25px;
+    }
+
+}
+
+/* Print – in case your grandma tries to print out this metronome */
+
+@media print {
+    
+    .navbar {
+        display: none;
+    }
+}

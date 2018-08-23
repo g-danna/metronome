@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="og:url" content="http://guglielmodanna.github.io/metronome">
+        <meta name="twitter:title" content="Accurate online metronome">
+        <meta property="og:title" content="Accurate online metronome">
+        <meta name="twitter:description" content="An extremely accurate online metronome made purely with JavaScript.">
+        <meta property="og:description" content="An extremely accurate online metronome made purely with JavaScript.">
+        <meta name="twitter:image" content="http://guglielmodanna.github.io/metronome/assets/metronome-share.jpg">
+        <meta property="og:image" content="http://guglielmodanna.github.io/metronome/assets/metronome-share.jpg">
+        <title>Accurate online metronome</title>
+        <meta name="description" content="An extremely accurate online metronome made purely with JavaScript.">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+        <main>
+            <div id="curtain-container">
+                <div id="curtain">
+                    <div id="controller">
+                        <button type="button" aria-label="Minus button" class="controls" id="minus-button">
+                            <!-- The SVGs are inserted directly as code in order to edit parts of them through CSS/JS -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.58 121.21" role="img" aria-label="Minus button - press it to decrease the tempo"><title>Minus button</title><desc>Press this button to decrease the tempo</desc><path class="fill" d="M68.78,113.4L7.78,7.78h122l-61,105.62m0,7.8a7.8,7.8,0,0,0,6.75-3.9l61-105.62A7.8,7.8,0,0,0,129.78,0H7.78A7.8,7.8,0,0,0,1,11.68L62,117.3a7.8,7.8,0,0,0,6.75,3.9h0Z" transform="translate(0.01 0.01)"/></svg>
+                        </button>
+                        <div id="display">
+                            <input type="number" value="" min ="0" max="350" step="1" id="tempo"><label for="tempo">&nbsp;bpm</label>
+                            </div>
+                        <button type="button" aria-label="Plus button" class="controls" id="plus-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.56 121.22" role="img" aria-label="Plus button - press it to increase the tempo"><title>Plus button</title><desc>Press this button to increase the tempo</desc><path class="fill" d="M80.37,9.15l61,105.62h-122l61-105.62m0-7.8a7.8,7.8,0,0,0-6.75,3.9l-61,105.62a7.8,7.8,0,0,0,6.75,11.69h122a7.8,7.8,0,0,0,6.75-11.69L87.12,5.25a7.8,7.8,0,0,0-6.75-3.9h0Z" transform="translate(-11.59 -1.36)"/></svg>
+                        </button>
+                        <button type="button" aria-label="Play button" class="controls" id="play-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137 137" role="img" aria-label="Play button - press it to start or stop the metronome"><title>Play button</title><desc>Press this button to start or stop the metronome</desc><path class="fill" d="M68.5,0A68.5,68.5,0,1,0,137,68.5,68.5,68.5,0,0,0,68.5,0Zm0,128A59.48,59.48,0,1,1,128,68.5h0A59.48,59.48,0,0,1,68.5,128Z"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <header>
+                <div class="h1-background">
+                    <h1 class="upper page">An extremely accurate online metronome made purely with JavaScript.</h1>
+                </div>
+            </header>
+            <section class="page">
+                <h2>Shortcuts</h2>
+                <table>
+                    <tr>
+                        <th><img src="assets/up-arrow-icon.svg" alt="Up arrow key" draggable="false"></th>
+                        <td>Increase tempo</td>
+                    </tr>
+                    <tr>
+                        <th><img src="assets/down-arrow-icon.svg" alt="Down arrow key" draggable="false"></th>
+                        <td>Decrease tempo</td>
+                    </tr>
+                    <tr>
+                        <th><img src="assets/spacebar-icon.svg" alt="Spacebar" draggable="false"></th>
+                        <td>Start / Stop</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="lower page">
+                <h2>Articles</h2>
+                <ul>
+                    <li><a href="http://www.html5rocks.com/en/tutorials/audio/scheduling/" target="_blank" class="external-link">A Tale of Two Clocks - Scheduling Web Audio with Precision</a></li>
+                </ul>
+            </section>
+        </main>
+        <nav class="navbar">
+            <button type="button" id="about-button">About</button>
+            <div id="share-buttons">
+                <a href="https://twitter.com/intent/tweet?url=https://guglielmodanna.github.io/metronome/&text=An%20extremely%20accurate%20online%20metronome%20made%20purely%20with%20JavaScript."><img src="assets/twitter.svg" alt="Share on Twitter" draggable="false"></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://guglielmodanna.github.io/metronome"><img src="assets/facebook.svg" alt="Share on Facebook" draggable="false"></a>
+            </div>
+        </nav>
+        <figure aria-hidden="true" role="dialog" class="upper lower page" id="error-message">
+            <div class="frame">
+                <img src="assets/broken-metronome.svg" alt="Broken metronome" draggable="false">
+            </div>
+            <figcaption>You need to use a supported browser for this app to work. Most browsers will do, except for Internet Explorer. We recommend using <a href="https://www.google.com/chrome/" class="external-link">Chrome</a>.</figcaption>
+        </figure>
+        <script type="text/javascript" src="scripts/script.js" async></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    </body>
+</html>
